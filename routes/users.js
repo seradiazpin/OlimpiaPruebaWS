@@ -19,19 +19,19 @@ router.get('/', function(req, res, next) {
 });
 var createUser = function (request, response) {
     var data = request.body|| {};
+    console.log(data);
     var user = new User;
     user.data = data;
 
     // Guardar en la base de datos
-    aplanadora.save(function(err) {
+    user.save(function(err) {
         if (err) {
-            console.log('Error database');
+            response.send("ERROR");
         }else {
-            console.log('Product saved successfully!');
+            response.send("OK");
         }
 
     });
-    response.redirect('/users');
 };
 router.post('/new',jsonParser,createUser);
 
