@@ -1,0 +1,5 @@
+node_modules
+data_example
+*.swp
+*log
+.idea
