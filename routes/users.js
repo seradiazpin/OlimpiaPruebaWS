@@ -5,6 +5,18 @@ var jsonParser = bodyParser.json();
 
 var User = require('../database/schemas/user');
 
+router.get('/all', function(req, res, next) {
+    var users = [];
+    User.find({}, function(err, pro) {
+        if (err) {
+            res.send('Error in database');
+        }else {
+            console.log(pro);
+            res.render('all', { users :pro});
+        }
+    });
+});
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     var users = [];

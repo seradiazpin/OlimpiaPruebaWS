@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <h1>USUARIOS</h1>
+    <ul>
+        <% for(var i=0; i<users.length; i++) {%>
+        <li>
+            <h5>
+                Nombre
+            </h5>
+            <b><%= users[i].data.name %></b>
+            <h5>
+                Direccion
+            </h5>
+            <b><%= users[i].data.address %></b>
+            <h5>
+                Ciudad
+            </h5>
+            <b><%= users[i].data.city %></b>
+            <h5>
+                Pais
+            </h5>
+            <b><%= users[i].data.country %></b>
+            <h5>
+                Telefono
+            </h5>
+            <b><%= users[i].data.phone %></b>
+        </li>
+        <p>-------------------------------------------</p>
+        <% } %>
+
+    </ul>
+</body>
+</html>
